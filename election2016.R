@@ -3,10 +3,10 @@ source("loadPackages.R")
 ##########################
 ### Set-Up Twitter API ###
 ##########################
-api_key = "cQuxuqfISjPdYlG9oyxq7WyBo"
-api_secret = "bIR6mcc5x35SbLHJModcPPwKEVyiU3bRHD5UvIvbS6qRwkPPoi"
-token_key = "1582629276-MNHj4zZxmgO6Fa63kiSnrXwuWKIWBpHo0NoXqKR"
-token_secret = "Nbo4QKZeQpqyrr0WrtDhqnxoKMTz1XQkCgZZrQsE9uZX1"
+api_key = "INSERT HERE"
+api_secret = "INSERT HERE"
+token_key = "INSERT HERE"
+token_secret = "INSERT HERE"
 setup_twitter_oauth(api_key, api_secret, token_key, token_secret)
 rm(api_key, api_secret, token_key, token_secret)
 
@@ -29,7 +29,8 @@ states@data$lat <- center_pts@coords[, 2]
 rm(center_pts)
 
 ## Filter States (Minus non-Contintental US, Plus DC)
-states.data <- states@data %>% filter(STUSPS %in% c(state.abb[-which(state.abb == "AK" | state.abb == "HI")], "DC"))
+states.data <- states@data %>% filter(STUSPS %in% 
+                                      c(state.abb[-which(state.abb == "AK" | state.abb == "HI")], "DC"))  # state.abb is a R dataset
 
 
 ########################
